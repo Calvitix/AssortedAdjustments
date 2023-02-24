@@ -1,6 +1,6 @@
-# Assorted Adjustments
+# Assorted Adjustments - French Translation
 
-[Phoenix Point Mod][Modnix] Various little tweaks to adjust the game to your liking.
+[Phoenix Point Mod][Modnix] Various little tweaks to adjust the game to your liking. the hardcoded Text are translated in French.
 
 ## Installation and Configuration
 [tl;dr:] Download .zip, open Modnix 2.5.5+, click "Add Mod", select .zip, open "Config-Tab", configure, save, run game.
