@@ -154,7 +154,7 @@ namespace AssortedAdjustments
         public int DifficultyOverrideStarvationMistDeathsFlat = 15;
         [Annotation("Completely disable population reduction by starvation. Only haven destructions will drop the bar.", "False")]
         public bool DifficultyOverrideDisableDeathByStarvation = false;
-        [Annotation("Mist expansion rate in kilometres per hour, vanilla default is 30", "30")]
+        [Annotation("Mist expansion rate in kilometres par heure, vanilla default is 30", "30")]
         public int DifficultyOverrideMistExpansionRate = 30;
         
 
@@ -232,7 +232,7 @@ namespace AssortedAdjustments
         [Annotation("Healing rate for mutogs at mutation labs, vanilla default is 20", "40")]
         public int MutationLabMutogHealAmount = 40;
         //Training
-        [Annotation("Experience gain rate per hour for soldiers at training facilities, vanilla default is 2", "2")]
+        [Annotation("Experience gain rate par heure for soldiers at training facilities, vanilla default is 2", "2")]
         public int TrainingFacilityBaseExperienceAmount = 2;
         [Annotation("Enables training facilities to add skillpoints to the faction pool. This is currently disabled in vanilla.", "True")]
         public bool TrainingFacilitiesGenerateSkillpoints = true;

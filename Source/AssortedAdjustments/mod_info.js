@@ -1,10 +1,10 @@
 {
 	Id : "Mad.AssortedAdjustments",
 	Name : "AssortedAdjustments",
-    Version: "1.13.0.1",
+    Version: "1.20.0.1",
 	Description : "Various little tweaks to adjust the game to your liking.",
-    Lang: "en",
-    Author: "Mad",
+    Lang: "fr",
+    Author: "Mad, trad Calvitix",
 	Url: {
 		"GitHub": "https://github.com/Mad-Mods-Phoenix-Point/AssortedAdjustments",
 		"Nexus": "https://www.nexusmods.com/phoenixpoint/mods/53"
