@@ -33,17 +33,17 @@ namespace AssortedAdjustments.Patches.UIEnhancements
     internal static class ExtendedAgendaTracker
     {
         internal static bool fetchedSiteNames = false;
-        internal static string unexploredSiteName = "UNEXPLORED SITE";
-        internal static string explorationSiteName = "EXPLORATION SITE";
-        internal static string scavengingSiteName = "SCAVENGING SITE";
-        internal static string ancientSiteName = "ANCIENT SITE";
+        internal static string unexploredSiteName = "SITE INEXPLORÉ";
+        internal static string explorationSiteName = "EXPLORATION DU SITE";
+        internal static string scavengingSiteName = "RÉCUPÉRATION";
+        internal static string ancientSiteName = "SITE ANTIQUE";
 
-        internal static string actionExploring = "INVESTIGATES";
-        internal static string actionTraveling = "TRAVELS TO";
-        internal static string actionRepairing = "REPAIRING:";
-        internal static string actionExcavating = "EXCAVATING:";
-        internal static string actionAcquire = "SECURE";
-        internal static string actionAttack = "WILL ATTACK:";
+        internal static string actionExploring = "EXPLORE : ";
+        internal static string actionTraveling = "SE DÉPLACE VERS";
+        internal static string actionRepairing = "RÉPARE :";
+        internal static string actionExcavating = "EXCAVATION :";
+        internal static string actionAcquire = "SÉCURISE : ";
+        internal static string actionAttack = "VA ATTAQUER :";
         //internal static string actionAttack = "DEFEND {0} AGAINST {1}";
 
         internal static Sprite aircraftSprite = null;

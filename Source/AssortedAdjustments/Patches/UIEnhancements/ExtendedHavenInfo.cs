@@ -139,7 +139,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
 
                     if (resourcesAvailable?.Count > 0 && textAnchor != null)
                     {
-                        string format = "<size=26>Exchange {0} for {1} ({2})</size>\n";
+                        string format = "<size=26> Échange {0} contre {1} ({2})</size>\n";
 
                         textAnchor.horizontalOverflow = HorizontalWrapMode.Overflow;
                         textAnchor.lineSpacing = 0.8f;
@@ -278,12 +278,12 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                         return;
                     }
 
-                    string alertnessLabel = "Alertness";
+                    string alertnessLabel = "Niveau d'alerte ";
                     string alertnessLevel;
                     switch (haven.AlertLevel)
                     {
                         case GeoHaven.HavenAlertLevel.Alert:
-                            alertnessLevel = "High";
+                            alertnessLevel = "Haut";
                             break;
                         case GeoHaven.HavenAlertLevel.HighAlert:
                             alertnessLevel = "Extreme";

@@ -181,11 +181,11 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                         //string add = $"Current output is {totalResearch} RESEARCH.)";
                         //__instance.UpdateText($"{org}\n{add}");
 
-                        string replace = $"RESEARCH LABS - Accelerate research projects";
+                        string replace = $"LABORATOIRES DE RECHERCHE - Accélère les projets de recherche";
                         string add = "";
                         if (AssortedAdjustments.Settings.EnableFacilityAdjustments && AssortedAdjustments.Settings.ResearchLabGenerateTechAmount > 0f)
                         {
-                            add = $" and TECH generation";
+                            add = $" et la génération de TECH";
                         }
                         __instance.UpdateText($"{replace}{add}");
                     }
@@ -198,11 +198,11 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                         //string add = $"Current output is {totalProduction} PRODUCTION.)";
                         //__instance.UpdateText($"{org}\n{add}");
 
-                        string replace = $"FABRICATION PLANTS - Accelerate manufacturing projects";
+                        string replace = $"USINES DE FABRICATION - Accélère les projets de fabrication";
                         string add = "";
                         if (AssortedAdjustments.Settings.EnableFacilityAdjustments && AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount > 0f)
                         {
-                            add = $" and MATERIALS generation";
+                            add = $" et de génération de MATÉRIAUX";
                         }
                         __instance.UpdateText($"{replace}{add}");
                     }

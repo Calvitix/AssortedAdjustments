@@ -64,22 +64,22 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     string tipText = "<!--FONTSIZE:30-->";
                     tipText += $"<size=42><color=#ECBA62>{phoenixBase.Site.Name}</color></size>";
                     tipText += "\n";
-                    tipText += $"Healing: {phoenixBase.Stats.HealSoldiersHP} ({phoenixBase.Stats.HealMutogHP}) HP/h";
+                    tipText += $"Santé: {phoenixBase.Stats.HealSoldiersHP} ({phoenixBase.Stats.HealMutogHP}) PV/h";
                     tipText += "\n";
-                    tipText += $"Recreation: {phoenixBase.Stats.HealSoldiersStamina} ST/h";
+                    tipText += $"Récupération: {phoenixBase.Stats.HealSoldiersStamina} EN/h";
                     tipText += "\n";
-                    tipText += $"Training: {phoenixBase.Stats.TrainSoldiersXP} XP/h";
+                    tipText += $"Entrainement: {phoenixBase.Stats.TrainSoldiersXP} XP/h";
 
                     List<GeoCharacter> soldiers = phoenixBase.SoldiersInBase.Where(c => c.TemplateDef.IsHuman).ToList();
                     if (soldiers.Count > 0)
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=36><color=#ECBA62>SOLDIERS</color></size>";
+                        tipText += $"<size=36><color=#ECBA62>SOLDATS</color></size>";
                         foreach (GeoCharacter soldier in soldiers)
                         {
                             tipText += "\n";
-                            tipText += $"{soldier.DisplayName.Split((char)32).First()} ({soldier.GetClassViewElementDefs().FirstOrDefault().DisplayName1.Localize()}, Level {soldier.Progression.LevelProgression.Level})";
+                            tipText += $"{soldier.DisplayName.Split((char)32).First()} ({soldier.GetClassViewElementDefs().FirstOrDefault().DisplayName1.Localize()}, Niveau {soldier.Progression.LevelProgression.Level})";
                         }
                     }
 
@@ -103,7 +103,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=36><color=#ECBA62>VEHICLES</color></size>";
+                        tipText += $"<size=36><color=#ECBA62>VÉHICULES</color></size>";
                         foreach (GeoCharacter vehicle in vehicles)
                         {
                             tipText += "\n";
@@ -117,7 +117,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=36><color=#ECBA62>AIRCRAFT</color></size>";
+                        tipText += $"<size=36><color=#ECBA62>VAISSEAUX</color></size>";
                         foreach (GeoVehicle aircraft in aircrafts)
                         {
                             tipText += "\n";
@@ -194,22 +194,22 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     string tipText = "<!--FONTSIZE:36-->";
                     tipText += $"<size=52><color=#ECBA62>{baseInfo.PhoenixBase.Site.Name}</color></size>";
                     tipText += "\n";
-                    tipText += $"Healing: {baseInfo.PhoenixBase.Stats.HealSoldiersHP} ({baseInfo.PhoenixBase.Stats.HealMutogHP}) HP/h";
+                    tipText += $"Santé: {baseInfo.PhoenixBase.Stats.HealSoldiersHP} ({baseInfo.PhoenixBase.Stats.HealMutogHP}) PV/h";
                     tipText += "\n";
-                    tipText += $"Recreation: {baseInfo.PhoenixBase.Stats.HealSoldiersStamina} ST/h";
+                    tipText += $"Récupération: {baseInfo.PhoenixBase.Stats.HealSoldiersStamina} EN/h";
                     tipText += "\n";
-                    tipText += $"Training: {baseInfo.PhoenixBase.Stats.TrainSoldiersXP} XP/h";
+                    tipText += $"Entraînement: {baseInfo.PhoenixBase.Stats.TrainSoldiersXP} XP/h";
 
                     List<GeoCharacter> soldiers = baseInfo.PhoenixBase.SoldiersInBase.Where(c => c.TemplateDef.IsHuman).ToList();
                     if (soldiers.Count > 0)
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=42><color=#ECBA62>SOLDIERS</color></size>";
+                        tipText += $"<size=42><color=#ECBA62>SOLDATS</color></size>";
                         foreach (GeoCharacter soldier in soldiers)
                         {
                             tipText += "\n";
-                            tipText += $"{soldier.DisplayName.Split((char)32).First()} ({soldier.GetClassViewElementDefs().FirstOrDefault().DisplayName1.Localize()}, Level {soldier.Progression.LevelProgression.Level})";
+                            tipText += $"{soldier.DisplayName.Split((char)32).First()} ({soldier.GetClassViewElementDefs().FirstOrDefault().DisplayName1.Localize()}, Niveau {soldier.Progression.LevelProgression.Level})";
                         }
                     }
 
@@ -233,7 +233,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=42><color=#ECBA62>VEHICLES</color></size>";
+                        tipText += $"<size=42><color=#ECBA62>VÉHICULES</color></size>";
                         foreach (GeoCharacter vehicle in vehicles)
                         {
                             tipText += "\n";
@@ -247,7 +247,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     {
                         tipText += "\n";
                         tipText += "\n";
-                        tipText += $"<size=42><color=#ECBA62>AIRCRAFT</color></size>";
+                        tipText += $"<size=42><color=#ECBA62>VAISSEAUX</color></size>";
                         foreach (GeoVehicle aircraft in aircrafts)
                         {
                             tipText += "\n";
@@ -307,15 +307,15 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                         GeoPhoenixBase geoPhoenixBase = site.GetComponent<GeoPhoenixBase>();
                         geoPhoenixBase.UpdateStats();
 
-                        ////PhoenixBaseExtendedInfoData.HealOutput = $"<color=#16aceb>HEALING: {geoPhoenixBase.Stats.HealSoldiersHP} ({geoPhoenixBase.Stats.HealMutogHP}) HP/h</color>";
-                        //PhoenixBaseExtendedInfoData.HealOutput = $"<color=#16aceb>HEALING: {geoPhoenixBase.Stats.HealSoldiersHP} HP/h</color>";
-                        //PhoenixBaseExtendedInfoData.StaminaOutput = $"<color=#ffffff>RECREATION: {geoPhoenixBase.Stats.HealSoldiersStamina} ST/h</color>";
+                        ////PhoenixBaseExtendedInfoData.HealOutput = $"<color=#16aceb>HEALING: {geoPhoenixBase.Stats.HealSoldiersHP} ({geoPhoenixBase.Stats.HealMutogHP}) PV/h</color>";
+                        //PhoenixBaseExtendedInfoData.HealOutput = $"<color=#16aceb>HEALING: {geoPhoenixBase.Stats.HealSoldiersHP} PV/h</color>";
+                        //PhoenixBaseExtendedInfoData.StaminaOutput = $"<color=#ffffff>RECREATION: {geoPhoenixBase.Stats.HealSoldiersStamina} EN/h</color>";
                         //PhoenixBaseExtendedInfoData.ExperienceOutput = $"<color=#ecba62>TRAINING: {geoPhoenixBase.Stats.TrainSoldiersXP} XP/h</color>";
                         //PhoenixBaseExtendedInfoData.SkillpointOutput = $"<color=#ffa800>SKILL: {geoPhoenixBase.Stats.GainSP} SP/d</color>";
 
-                        PhoenixBaseExtendedInfoData.HealOutput = $"HEALING: {geoPhoenixBase.Stats.HealSoldiersHP} HP/h";
-                        PhoenixBaseExtendedInfoData.StaminaOutput = $"RECREATION: {geoPhoenixBase.Stats.HealSoldiersStamina} ST/h";
-                        PhoenixBaseExtendedInfoData.ExperienceOutput = $"TRAINING: {geoPhoenixBase.Stats.TrainSoldiersXP} XP/h";
+                        PhoenixBaseExtendedInfoData.HealOutput = $"SANTÉ: {geoPhoenixBase.Stats.HealSoldiersHP} PV/h";
+                        PhoenixBaseExtendedInfoData.StaminaOutput = $"RÉCUPÉRATION: {geoPhoenixBase.Stats.HealSoldiersStamina} EN/h";
+                        PhoenixBaseExtendedInfoData.ExperienceOutput = $"ENTRAINEMENT: {geoPhoenixBase.Stats.TrainSoldiersXP} XP/h";
 
                         Logger.Info($"[UIStateVehicleSelected_OnSiteMouseHover_PREFIX] {PhoenixBaseExtendedInfoData.ToString()}");
                     }    
@@ -404,37 +404,37 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     String info = "<!--FONTSIZE:24-->";
 
                     info += "\n";
-                    info += "<size=42><color=#ECBA62>CURRENT BASE</color></size>";
+                    info += "<size=42><color=#ECBA62>BASE ACTUELLE</color></size>";
                     info += "\n";
-                    info += $"<size=36><color=#FFFFFF>Utility</color></size>";
+                    info += $"<size=36><color=#FFFFFF>Caractéristiques</color></size>";
                     info += "\n";
                     info += "<size=30>";
 
                     if (__instance.PxBase.Layout.QueryFacilitiesWithComponent<SatelliteUplinkFacilityComponent>(true).Any())
                     {
-                        info += $"Scanning Range: {__instance.PxBase.SiteScanner.MaxRange.InMeters / 1000} km";
+                        info += $"Portée de détection : {__instance.PxBase.SiteScanner.MaxRange.InMeters / 1000} km";
                         info += "\n";
                     }
 
-                    info += $"Storage: {__instance.PxBase.Stats.MaxItemCapacity} units";
+                    info += $"Stockage: {__instance.PxBase.Stats.MaxItemCapacity} unités";
                     info += "\n";
-                    info += $"Healing: {__instance.PxBase.Stats.HealSoldiersHP} ({__instance.PxBase.Stats.HealMutogHP}) HP/h";
+                    info += $"Santé: {__instance.PxBase.Stats.HealSoldiersHP} ({__instance.PxBase.Stats.HealMutogHP}) PV/h";
                     info += "\n";
-                    info += $"Recreation: {__instance.PxBase.Stats.HealSoldiersStamina} ST/h";
+                    info += $"Récupération: {__instance.PxBase.Stats.HealSoldiersStamina} EN/h";
                     info += "\n";
-                    info += $"Training: {__instance.PxBase.Stats.TrainSoldiersXP} XP/h";
+                    info += $"Entraînement: {__instance.PxBase.Stats.TrainSoldiersXP} XP/h";
                     info += "\n";
-                    info += $"Repairs: {__instance.PxBase.Stats.RepairVehiclesHP} HP/h";
+                    info += $"Réparations: {__instance.PxBase.Stats.RepairVehiclesHP} PV/h";
                     info += "\n";
 
                     if (__instance.PxBase.Stats.ResourceOutput.Values.Count > 0) {
                         info += "\n";
-                        info += $"<size=36><color=#FFFFFF>Resources</color></size>";
+                        info += $"<size=36><color=#FFFFFF>Ressources</color></size>";
                         info += "\n";
                         StringBuilder stringBuilder = new StringBuilder();
                         foreach (ResourceUnit resourceUnit in __instance.PxBase.Stats.ResourceOutput.Values)
                         {
-                            stringBuilder.Append(resourceUnit.Type).Append(": ").Append(resourceUnit.Value * 24 + "/d").Append("\n");
+                            stringBuilder.Append(resourceUnit.Type).Append(": ").Append(resourceUnit.Value * 24 + "/j").Append("\n");
                         }
                         info += $"{stringBuilder.ToString()}";
                     }
@@ -451,7 +451,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     if (allSoldiers.Count > 0)
                     {
                         info += "\n";
-                        info += "<size=42><color=#ECBA62>TREATMENT</color></size>";
+                        info += "<size=42><color=#ECBA62>TRAITEMENT</color></size>";
                         info += "\n";
                         if (bruisedSoldiers.Count > 0)
                         {
@@ -461,20 +461,20 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                                 info += "\n";
                                 if (soldier.Health.IntValue < soldier.Health.IntMax)
                                 {
-                                    info += $"HP: <color=#CC3333>{soldier.Health.IntValue}/{soldier.Health.IntMax}</color>";
+                                    info += $"PV: <color=#CC3333>{soldier.Health.IntValue}/{soldier.Health.IntMax}</color>";
                                 }
                                 else
                                 {
-                                    info += $"HP: {soldier.Health.IntValue}/{soldier.Health.IntMax}";
+                                    info += $"PV: {soldier.Health.IntValue}/{soldier.Health.IntMax}";
                                 }
                                 info += ", ";
                                 if (soldier.Fatigue.Stamina.IntValue < soldier.Fatigue.Stamina.IntMax)
                                 {
-                                    info += $"ST: <color=#CC3333>{soldier.Fatigue.Stamina.IntValue}/{soldier.Fatigue.Stamina.IntMax}</color>";
+                                    info += $"EN: <color=#CC3333>{soldier.Fatigue.Stamina.IntValue}/{soldier.Fatigue.Stamina.IntMax}</color>";
                                 }
                                 else
                                 {
-                                    info += $"ST: {soldier.Fatigue.Stamina.IntValue}/{soldier.Fatigue.Stamina.IntMax}";
+                                    info += $"EN: {soldier.Fatigue.Stamina.IntValue}/{soldier.Fatigue.Stamina.IntMax}";
                                 }
                                 info += ", ";
                                 info += $"XP: {soldier.Progression.LevelProgression.CurrentLevelExperience}/{soldier.Progression.LevelProgression.ExperienceNeededForNextLevel}";
@@ -483,7 +483,7 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                         }
                         else
                         {
-                            info += $"<size=36><color=#FFFFFF>All soldiers are healed and rested.</color></size>";
+                            info += $"<size=36><color=#FFFFFF>Tous les soldats sont guéris et reposés.</color></size>";
                             info += "\n";
                         }
                     }
@@ -501,11 +501,11 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                             info += "<size=30>";
                             if (mutog.Health.IntValue < mutog.Health.IntMax)
                             {
-                                info += $"Health: <color=#CC3333>{mutog.Health.IntValue}/{mutog.Health.IntMax}</color>";
+                                info += $"Santé: <color=#CC3333>{mutog.Health.IntValue}/{mutog.Health.IntMax}</color>";
                             }
                             else
                             {
-                                info += $"Health: {mutog.Health.IntValue}/{mutog.Health.IntMax}";
+                                info += $"Santé: {mutog.Health.IntValue}/{mutog.Health.IntMax}";
                             }
                             info += "</size>";
                             info += "\n";
@@ -525,11 +525,11 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                             info += "<size=30>";
                             if (vehicle.Health.IntValue < vehicle.Health.IntMax)
                             {
-                                info += $"Health: <color=#CC3333>{vehicle.Health.IntValue}/{vehicle.Health.IntMax}</color>";
+                                info += $"Santé: <color=#CC3333>{vehicle.Health.IntValue}/{vehicle.Health.IntMax}</color>";
                             }
                             else
                             {
-                                info += $"Health: {vehicle.Health.IntValue}/{vehicle.Health.IntMax}";
+                                info += $"Santé: {vehicle.Health.IntValue}/{vehicle.Health.IntMax}";
                             }
                             info += "</size>";
                             info += "\n";   
@@ -540,16 +540,16 @@ namespace AssortedAdjustments.Patches.UIEnhancements
                     if (aircrafts.Count > 0)
                     {
                         info += "\n";
-                        info += "<size=42><color=#ECBA62>AIRCRAFT</color></size>";
+                        info += "<size=42><color=#ECBA62>VAISSEAUX</color></size>";
                         foreach (GeoVehicle aircraft in aircrafts)
                         {
                             info += "\n";
                             info += $"<size=36><color=#FFFFFF>{aircraft.Name}</color></size>";
                             info += "\n";
                             info += "<size=30>";
-                            info += $"Health: {(aircraft.VehicleDef.BaseStats.HitPoints)}/{aircraft.VehicleDef.BaseStats.MaxHitPoints}";
+                            info += $"Santé: {(aircraft.VehicleDef.BaseStats.HitPoints)}/{aircraft.VehicleDef.BaseStats.MaxHitPoints}";
                             info += ", ";
-                            info += $"Space: {aircraft.UsedCharacterSpace}/{aircraft.MaxCharacterSpace}";
+                            info += $"Places: {aircraft.UsedCharacterSpace}/{aircraft.MaxCharacterSpace}";
                             info += "</size>";
                             info += "\n";
                         }
