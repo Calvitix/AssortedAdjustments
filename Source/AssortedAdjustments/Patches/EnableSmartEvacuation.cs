@@ -127,7 +127,7 @@ namespace AssortedAdjustments.Patches
 
                         if (isSquadInExitZone)
                         {
-                            GameUtl.GetMessageBox().ShowSimplePrompt("Evacuate Squad?", MessageBoxIcon.Question, MessageBoxButtons.YesNo, new MessageBox.MessageBoxCallback(OnEvacuateSquadConfirmationResult), null, evacuateAbility);
+                            GameUtl.GetMessageBox().ShowSimplePrompt("Évacuer l'Escouade ?", MessageBoxIcon.Question, MessageBoxButtons.YesNo, new MessageBox.MessageBoxCallback(OnEvacuateSquadConfirmationResult), null, evacuateAbility);
                         }
 
 

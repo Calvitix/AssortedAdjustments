@@ -38,17 +38,17 @@ namespace AssortedAdjustments.Patches
                 if (pmaDef.name.Contains("Cautious"))
                 {
                     pmaDef.StatModifications[0].Value = 0.95f;
-                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("20% bonus accuracy and -5% damage dealt", true);
+                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("Bonus de 20% de précision, mais -5% de dégâts infligés", true);
                 }
                 else if (pmaDef.name.Contains("Reckless"))
                 {
                     pmaDef.StatModifications[1].Value = -0.05f;
-                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("10% bonus damage dealt and -5% accuracy", true);
+                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("Bonus de 10% de dégâts infligés, mais -5% de précision", true);
                 }
                 else if (pmaDef.name.Contains("Strongman"))
                 {
                     pmaDef.StatModifications[0].Value = -10f;
-                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("Gain Heavy weapons proficiency with +20% accuracy, +2 Strength and -10 perception", true);
+                    pmaDef.ViewElementDef.Description = new LocalizedTextBind("Obtenez la maîtrise des Armes lourdes avec +20% de précision, +2 de puissance, mais -10 de perception", true);
                 }
 
                 Logger.Info($"[AbilityAdjustments_Apply] pmaDef: {pmaDef.name}, GUID: {pmaDef.Guid}, Description: {pmaDef.ViewElementDef?.Description.Localize()}");
@@ -66,14 +66,14 @@ namespace AssortedAdjustments.Patches
                 if (def.name.Contains("Frenzy")) // This is needed as there are are than one
                 {
                     def.SpeedCoefficient = 0.33f;
-                    def.Visuals.Description = new LocalizedTextBind("Speed increase of 33% and panic immunity", true);
+                    def.Visuals.Description = new LocalizedTextBind("Augmente la vitesse de 33% et immunité contre la panique", true);
 
                     Logger.Info($"[AbilityAdjustments_Apply] ({def.name}), SpeedCoefficient: {def.SpeedCoefficient}, Description: {def.Visuals.Description.Localize()}");
                 }
             }
             foreach (InstilFrenzyAbilityDef def in defRepository.DefRepositoryDef.AllDefs.OfType<InstilFrenzyAbilityDef>())
             {
-                def.ViewElementDef.Description = new LocalizedTextBind("Instills Frenzy in allies within 20 tiles for two turns, increasing their speed by 33% and granting them panic immunity", true);
+                def.ViewElementDef.Description = new LocalizedTextBind("Instille la frénésie chez les alliés situés dans un rayon de 20 cases pendant deux tours, ce qui augmente leur vitesse de 33% et leur confère une immunité contre la panique.", true);
 
                 Logger.Info($"[AbilityAdjustments_Apply] ({def.name}), Description: {def.ViewElementDef.Description.Localize()}");
             }
@@ -81,7 +81,7 @@ namespace AssortedAdjustments.Patches
             {
                 if (def.name.Contains("Stimpack"))
                 {
-                    def.ViewElementDef.Description = new LocalizedTextBind("Instills Frenzy for two turns, increasing speed by 33% and granting panic immunity", true);
+                    def.ViewElementDef.Description = new LocalizedTextBind("Instille la frénésie chez les alliés situés dans un rayon de 20 cases pendant deux tours, ce qui augmente leur vitesse de 33% et leur confère une immunité contre la panique.", true);
 
                     Logger.Info($"[AbilityAdjustments_Apply] ({def.name}), Description: {def.ViewElementDef.Description.Localize()}");
                 }

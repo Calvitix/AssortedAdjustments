@@ -24,8 +24,8 @@ namespace AssortedAdjustments.Patches
     internal static class EnableScrapAircraft
     {
         internal static Color emptySlotDefaultColor = new Color32(0, 0, 0, 128);
-        internal static string emptySlotDefaultText = "EMPTY";
-        internal static string emptySlotScrapText = "SCRAP AIRCRAFT?";
+        internal static string emptySlotDefaultText = "VIDE";
+        internal static string emptySlotScrapText = "RECYCLER VAISSEAU ?";
 
         private class ContainerInfo
         {

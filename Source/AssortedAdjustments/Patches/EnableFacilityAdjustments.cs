@@ -315,49 +315,49 @@ namespace AssortedAdjustments.Patches
                     //float currentBonusValue = currentHealFacilityHealOutput > baseHealOutput ? (currentHealFacilityHealOutput - baseHealOutput) : 0;
                     //string currentBonus = currentBonusValue > 0 ? $"({baseHealOutput} + {currentBonusValue})" : "";
 
-                    __instance.Description.text = $"All soldiers at the base (even if assigned to an aircraft) will recover {currentHealFacilityHealOutput} Hit Points per hour for each medical facility in the base.";
+                    __instance.Description.text = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) récupèrent {currentHealFacilityHealOutput} Points de santé par heure pour chaque station médicale de la base.";
                 }
                 else if (facility.name.Contains("LivingQuarters"))
                 {
-                    __instance.Description.text = $"All soldiers at the base (even if assigned to an aircraft) will recover {currentHealFacilityStaminaHealOutput} Stamina points per hour for each living quarters in the base.";
+                    __instance.Description.text = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) récupèrent {currentHealFacilityStaminaHealOutput} Points d'endurance par heure pour chaque quartier d'habitation de la base.";
                 }
                 else if (facility.name.Contains("TrainingFacility"))
                 {
-                    string s1 = $"All soldiers at the base (even if assigned to an aircraft) will gain {currentExperienceFacilityExperienceOutput} Experience Points per hour for each training facility in the base.";
+                    string s1 = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) gagnent {currentExperienceFacilityExperienceOutput} Points d'expérience par heure pour chaque centre d'entrainement de la base.";
                     string s2 = "";
                     if(AssortedAdjustments.Settings.TrainingFacilitiesGenerateSkillpoints && AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 0)
                     {
-                        string pluralizeSP = AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 1 ? "skillpoints" : "skillpoint";
-                        s2 = $"Contributes {AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount} {pluralizeSP} to the global pool every day."; 
+                        string pluralizeSP = AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 1 ? "points" : "point";
+                        s2 = $"Ajoute {AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount} {pluralizeSP} de compétences global chaque jour."; 
                     }
                     __instance.Description.text = $"{s1}\n{s2}";
                 }
                 else if (facility.name.Contains("MutationLab"))
                 {
                     string org = __instance.Description.text;
-                    string add = $"All mutogs at the base (even if assigned to an aircraft) will recover additional {currentHealFacilityMutogHealOutput} Hit Points per hour for each mutation lab in the base.";
+                    string add = $"Tous les mutogs de la base (même s'ils sont affectés à un aéronef) récupérent {currentHealFacilityMutogHealOutput} Points de santé par heure pour chaque laboratoire de mutation de la base.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.name.Contains("VehicleBay"))
                 {
-                    __instance.Description.text = $"Vehicles and aircraft at the base recover {currentVehicleSlotFacilityVehicleHealOuput} Hit Points per hour. Allows maintenance of 2 ground vehicles and 2 aircraft.";
+                    __instance.Description.text = $"Les véhicules et les avions de la base récupèrent {currentVehicleSlotFacilityVehicleHealOuput} Points de santé par heure. Permet l'entretien de 2 véhicules terrestres et de 2 avions.";
                 }
                 else if (facility.name.Contains("FabricationPlant") && AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount > 0)
                 {
                     string org = __instance.Description.text;
-                    string add = $"Every plant generates {AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount} material per hour.";
+                    string add = $"Chaque usine génère {AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount} matériaux par heure.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.name.Contains("ResearchLab") && AssortedAdjustments.Settings.ResearchLabGenerateTechAmount > 0)
                 {
                     string org = __instance.Description.text;
-                    string add = $"Every lab generates {AssortedAdjustments.Settings.ResearchLabGenerateTechAmount} tech per hour.";
+                    string add = $"Chaque laboratoire génère {AssortedAdjustments.Settings.ResearchLabGenerateTechAmount} tech par heure.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.name.Contains("FoodProduction"))
                 {
                     int foodProductionUnits = (int)Math.Round(currentFoodProductionFacilitySuppliesOutput * 24);
-                    __instance.Description.text = $"A food production facility that generates enough food for {foodProductionUnits} soldiers each day.";
+                    __instance.Description.text = $"Une installation de production alimentaire qui génère suffisamment de nourriture pour {foodProductionUnits} soldats chaque jour.";
                 }
             }
             catch (Exception e)
@@ -372,49 +372,49 @@ namespace AssortedAdjustments.Patches
             {
                 if (facility.Def.name.Contains("MedicalBay"))
                 {
-                    __instance.Description.text = $"All soldiers at the base (even if assigned to an aircraft) will recover {currentHealFacilityHealOutput} Hit Points per hour for each medical facility in the base.";
+                    __instance.Description.text = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) récupèrent {currentHealFacilityHealOutput} Points de santé par heure pour chaque station médicale de la base.";
                 }
                 else if (facility.Def.name.Contains("LivingQuarters"))
                 {
-                    __instance.Description.text = $"All soldiers at the base (even if assigned to an aircraft) will recover {currentHealFacilityStaminaHealOutput} Stamina points per hour for each living quarters in the base.";
+                    __instance.Description.text = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) récupèrent {currentHealFacilityStaminaHealOutput} Points d'endurance par heure pour chaque quartier d'habitation de la base.";
                 }
                 else if (facility.Def.name.Contains("TrainingFacility"))
                 {
-                    string s1 = $"All soldiers at the base (even if assigned to an aircraft) will gain {currentExperienceFacilityExperienceOutput} Experience Points per hour for each training facility in the base.";
+                    string s1 = $"Tous les soldats présents sur la base (même s'ils sont affectés à un avion) gagnent {currentExperienceFacilityExperienceOutput} Points d'expérience par heure pour chaque centre d'entraînement de la base.";
                     string s2 = "";
                     if (AssortedAdjustments.Settings.TrainingFacilitiesGenerateSkillpoints && AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 0)
                     {
-                        string pluralizeSP = AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 1 ? "skillpoints" : "skillpoint";
-                        s2 = $"Contributes {AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount} {pluralizeSP} to the global pool every day.";
+                        string pluralizeSP = AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount > 1 ? "points" : "point";
+                        s2 = $"Ajoute {AssortedAdjustments.Settings.TrainingFacilityBaseSkillPointsAmount} {pluralizeSP} de compétences global chaque jour.";
                     }
                     __instance.Description.text = $"{s1}\n{s2}";
                 }
                 else if (facility.Def.name.Contains("MutationLab"))
                 {
                     string org = __instance.Description.text;
-                    string add = $"All mutogs at the base (even if assigned to an aircraft) will recover additional {currentHealFacilityMutogHealOutput} Hit Points per hour for each mutation lab in the base.";
+                    string add = $"Tous les mutogs de la base (même s'ils sont affectés à un aéronef) récupéreront {currentHealFacilityMutogHealOutput} Points de vie supplémentaires par heure pour chaque laboratoire de mutation de la base.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.Def.name.Contains("VehicleBay"))
                 {
-                    __instance.Description.text = $"Vehicles and aircraft at the base recover {currentVehicleSlotFacilityVehicleHealOuput} Hit Points per hour. Allows maintenance of 2 ground vehicles and 2 aircraft.";
+                    __instance.Description.text = $"Les véhicules et les avions de la base récupèrent {currentVehicleSlotFacilityVehicleHealOuput} Points de santé par heure. Permet l'entretien de 2 véhicules terrestres et de 2 aéronefs.";
                 }
                 else if (facility.Def.name.Contains("FabricationPlant") && AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount > 0)
                 {
                     string org = __instance.Description.text;
-                    string add = $"Every plant generates {AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount} material per hour.";
+                    string add = $"Chaque usine génère {AssortedAdjustments.Settings.FabricationPlantGenerateMaterialsAmount} matériaux par heure.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.Def.name.Contains("ResearchLab") && AssortedAdjustments.Settings.ResearchLabGenerateTechAmount > 0)
                 {
                     string org = __instance.Description.text;
-                    string add = $"Every lab generates {AssortedAdjustments.Settings.ResearchLabGenerateTechAmount} tech per hour.";
+                    string add = $"Chaque laboratoire génère {AssortedAdjustments.Settings.ResearchLabGenerateTechAmount} tech par heure.";
                     __instance.Description.text = $"{org}\n{add}";
                 }
                 else if (facility.Def.name.Contains("FoodProduction"))
                 {
                     int foodProductionUnits = (int)Math.Round(currentFoodProductionFacilitySuppliesOutput * 24);
-                    __instance.Description.text = $"A food production facility that generates enough food for {foodProductionUnits} soldiers each day.";
+                    __instance.Description.text = $"Une installation de production alimentaire qui génère suffisamment de nourriture pour {foodProductionUnits} soldats chaque jour.";
                 }
             }
             catch (Exception e)
